@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { Hero } from '../../models/hero';
-import { HEROES } from '../mock-heroes';
 import { HeroService } from '../services/hero.service';
 import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'my-heroes',
@@ -11,13 +11,11 @@ import {Router} from "@angular/router";
 })
 export class HeroesComponent implements OnInit{
 
-  constructor(private heroService: HeroService, private router: Router){}
+  constructor(
+    private heroService: HeroService,
+    private router: Router){}
 
-  hero: Hero = {
-    id: 5,
-    name: 'Coltin'
-  };
-  heroes = HEROES;
+  heroes: Hero[];
   selectedHero: Hero;
 
   onSelect(hero: Hero): void{
@@ -25,7 +23,8 @@ export class HeroesComponent implements OnInit{
   }
 
   getHeroes(): void{
-    this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroes()
+      .then(heroes => this.heroes = heroes);
   }
 
   gotoDetail(): void{
