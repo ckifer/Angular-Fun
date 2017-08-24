@@ -21,7 +21,6 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HeroDetailComponent,
     HeroesComponent,
     HeroSearchComponent,
-
   ],
   imports: [
     BrowserModule,
