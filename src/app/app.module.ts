@@ -7,7 +7,7 @@ import {HeroesComponent} from "./hero-component/heroes.component";
 import {HeroService} from "./services/hero.service";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './services/in-memory-data.service';
@@ -25,7 +25,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule,
   ],
