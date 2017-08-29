@@ -6,6 +6,18 @@
     "module": "es2015",
     "types": []
   },
+  "directive-selector": [
+  true,
+  "attribute",
+  "app",
+  "camelCase"
+],
+  "component-selector": [
+    true,
+    "element",
+    "hero",
+    "kebab-case"
+  ],
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
